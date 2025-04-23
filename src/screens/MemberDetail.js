@@ -22,9 +22,6 @@ function MemberDetail() {
   const [footerVisible, setFooterVisible] = useState(false);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-
-
   const [feedback, setFeedbacks] = useState('');
   const [newfeedback, setNewFeedbacks] = useState('');
 
@@ -38,7 +35,7 @@ function MemberDetail() {
   const fetchFeedbacks = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.get('https://hahai-admin-79ly.onrender.com/feedbacks', {
+      const response = await axios.get('https://localhost:5001/feedbacks', {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -114,7 +111,7 @@ function MemberDetail() {
     }
 
     try {
-      const response = await axios.get('https://hahai-admin-79ly.onrender.com/admin', {
+      const response = await axios.get('https://localhost:5001/admin', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -138,7 +135,7 @@ function MemberDetail() {
 
   const fetchUserData = async (userId) => {
     try {
-      const response = await axios.get(`https://hahai-admin-79ly.onrender.com/users/${userId}`, {
+      const response = await axios.get(`https://localhost:5001/users/${userId}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
         },
@@ -233,7 +230,7 @@ function MemberDetail() {
 
     try {
       const response = await axios.put(
-        `https://hahai-admin-79ly.onrender.com/users/suspend/${user._id}`,
+        `https://localhost:5001/users/suspend/${user._id}`,
         { reason: "การละเมิดกฎ" },
         {
           headers: {
@@ -269,7 +266,7 @@ function MemberDetail() {
 
     try {
       const response = await axios.put(
-        `https://hahai-admin-79ly.onrender.com/users/unsuspend/${user._id}`,
+        `https://localhost:5001/users/unsuspend/${user._id}`,
         {}, // ส่งข้อมูลที่จำเป็น (ถ้ามี)
         {
           headers: {

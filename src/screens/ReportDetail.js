@@ -24,9 +24,6 @@ function ReportDetail() {
     const [reports, setReports] = useState([]);
     const [footerVisible, setFooterVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-
-
-
     const [feedback, setFeedbacks] = useState('');
     const [newfeedback, setNewFeedbacks] = useState('');
     const token = localStorage.getItem('authToken');
@@ -82,7 +79,7 @@ function ReportDetail() {
     const fetchFeedbacks = async () => {
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.get('https://hahai-admin-79ly.onrender.com/feedbacks', {
+            const response = await axios.get('https://localhost:5001/feedbacks', {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
@@ -137,7 +134,7 @@ function ReportDetail() {
         }
 
         try {
-            const response = await axios.get('https://hahai-admin-79ly.onrender.com/admin', {
+            const response = await axios.get('https://localhost:5001/admin', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -188,7 +185,7 @@ function ReportDetail() {
         }
 
         try {
-            const response = await axios.delete(`https://hahai-admin-79ly.onrender.com/reports/${id}`, {
+            const response = await axios.delete(`https://localhost:5001/reports/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`, // Ensure `token` is defined and valid
                 },

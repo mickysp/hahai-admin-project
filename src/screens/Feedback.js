@@ -46,7 +46,7 @@ function Feedback() {
   const fetchFeedbacks = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.get('https://hahai-admin-79ly.onrender.com/feedbacks', {
+      const response = await axios.get('https://localhost:5001/feedbacks', {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -109,7 +109,7 @@ function Feedback() {
     }
 
     try {
-      const response = await axios.get('https://hahai-admin-79ly.onrender.com/admin', {
+      const response = await axios.get('https://localhost:5001/admin', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -141,7 +141,7 @@ function Feedback() {
 
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.delete(`https://hahai-admin-79ly.onrender.com/feedbacks/${selectedFeedbackId}`, {
+      const response = await axios.delete(`https://localhost:5001/feedbacks/${selectedFeedbackId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -177,7 +177,7 @@ function Feedback() {
     try {
       setIsLoading(true);  // Show loading spinner
 
-      const response = await axios.put(`https://hahai-admin-79ly.onrender.com/feedback/${feedbackId}/reply`, { message });
+      const response = await axios.put(`https://localhost:5001/feedback/${feedbackId}/reply`, { message });
 
       if (response.status === 200) {
         alert("คำตอบของคุณถูกส่งไปยังผู้ใช้เรียบร้อยแล้ว");
@@ -277,7 +277,7 @@ function Feedback() {
 
     try {
       const token = localStorage.getItem('authToken');
-      await axios.put(`https://hahai-admin-79ly.onrender.com/feedbacks/${feedbackId}/status`, { status: newStatus }, {
+      await axios.put(`https://localhost:5001/feedbacks/${feedbackId}/status`, { status: newStatus }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log('Status updated');

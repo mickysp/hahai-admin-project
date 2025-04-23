@@ -50,7 +50,7 @@ function Member() {
   const fetchFeedbacks = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.get('https://hahai-admin-79ly.onrender.com/feedbacks', {
+      const response = await axios.get('https://localhost:5001/feedbacks', {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -126,7 +126,7 @@ function Member() {
     }
 
     try {
-      const response = await axios.get('https://hahai-admin-79ly.onrender.com/admin', {
+      const response = await axios.get('https://localhost:5001/admin', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -168,7 +168,7 @@ function Member() {
     }
 
     try {
-      const response = await axios.get('https://hahai-admin-79ly.onrender.com/users', {
+      const response = await axios.get('https://localhost:5001/users', {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -275,7 +275,7 @@ function Member() {
 
     try {
       const response = await axios.put(
-        `https://hahai-admin-79ly.onrender.com/users/suspend/${userId}`,
+        `https://localhost:5001/users/suspend/${userId}`,
         { reason: "การละเมิดกฎ" }, // You can customize the reason here
         {
           headers: {
@@ -321,7 +321,7 @@ function Member() {
         return;
       }
 
-      const response = await axios.delete(`https://hahai-admin-79ly.onrender.com/users/${id}`, {
+      const response = await axios.delete(`https://localhost:5001/users/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

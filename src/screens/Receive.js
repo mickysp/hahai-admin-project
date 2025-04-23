@@ -45,7 +45,7 @@ function Receive() {
 
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.delete(`https://hahai-admin-79ly.onrender.com/received/${selectedReceiveId}`, {
+            const response = await axios.delete(`https://localhost:5001/received/${selectedReceiveId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
@@ -83,7 +83,7 @@ function Receive() {
     const fetchFeedbacks = async () => {
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.get('https://hahai-admin-79ly.onrender.com/feedbacks', {
+            const response = await axios.get('https://localhost:5001/feedbacks', {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
@@ -146,7 +146,7 @@ function Receive() {
         }
 
         try {
-            const response = await axios.get('https://hahai-admin-79ly.onrender.com/admin', {
+            const response = await axios.get('https://localhost:5001/admin', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -188,7 +188,7 @@ function Receive() {
                     throw new Error("No token found");
                 }
 
-                const response = await axios.get('https://hahai-admin-79ly.onrender.com/received', {
+                const response = await axios.get('https://localhost:5001/received', {
                     headers: { Authorization: `Bearer ${token}` },  // ส่ง token ไปใน headers
                 });
 

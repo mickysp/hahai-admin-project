@@ -23,8 +23,6 @@ function UpdateCategory() {
     const [buttonColor, setButtonColor] = useState('#006AFF');
     const [showDropdown, setShowDropdown] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-
-
     const [feedback, setFeedbacks] = useState('');
     const [newfeedback, setNewFeedbacks] = useState('');
     const token = localStorage.getItem('authToken');
@@ -63,7 +61,7 @@ function UpdateCategory() {
     const fetchFeedbacks = async () => {
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.get('https://hahai-admin-79ly.onrender.com/feedbacks', {
+            const response = await axios.get('https://localhost:5001/feedbacks', {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
@@ -114,7 +112,7 @@ function UpdateCategory() {
         }
 
         try {
-            const response = await axios.get('https://hahai-admin-79ly.onrender.com/admin', {
+            const response = await axios.get('https://localhost:5001/admin', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -145,7 +143,7 @@ function UpdateCategory() {
 
         const fetchCategoryById = async () => {
             try {
-                const response = await axios.get(`https://hahai-admin-79ly.onrender.com/categories/${id}`, {
+                const response = await axios.get(`https://localhost:5001/categories/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -176,7 +174,7 @@ function UpdateCategory() {
             }
 
             const response = await axios.put(
-                `https://hahai-admin-79ly.onrender.com/categories/${id}`,
+                `https://localhost:5001/categories/${id}`,
                 category,
                 {
                     headers: {

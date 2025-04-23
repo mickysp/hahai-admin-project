@@ -98,7 +98,7 @@ function LocationDetail() {
         }
 
         try {
-            const response = await axios.get('https://hahai-admin-79ly.onrender.com/admin', {
+            const response = await axios.get('https://localhost:5001/admin', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -125,7 +125,7 @@ function LocationDetail() {
             if (!locationname) return;
             try {
                 const decodedLocation = decodeURIComponent(locationname);
-                const response = await axios.get(`https://hahai-admin-79ly.onrender.com/blogs/by-location/${decodedLocation}`);
+                const response = await axios.get(`https://localhost:5001/blogs/by-location/${decodedLocation}`);
                 console.log("Blogs Data:", response.data); // ตรวจสอบข้อมูลที่ได้รับ
                 if (response.data) {
                     setBlogs(response.data);

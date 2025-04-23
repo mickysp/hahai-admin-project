@@ -47,7 +47,7 @@ function FeedbackDetail() {
     const fetchFeedbacks = async () => {
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.get('https://hahai-admin-79ly.onrender.com/feedbacks', {
+            const response = await axios.get('https://localhost:5001/feedbacks', {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
@@ -82,7 +82,7 @@ function FeedbackDetail() {
         }
 
         try {
-            const response = await axios.get('https://hahai-admin-79ly.onrender.com/admin', {
+            const response = await axios.get('https://localhost:5001/admin', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

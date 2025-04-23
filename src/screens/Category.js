@@ -96,7 +96,7 @@ function Category() {
   const fetchFeedbacks = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.get('https://hahai-admin-79ly.onrender.com/feedbacks', {
+      const response = await axios.get('https://localhost:5001/feedbacks', {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -147,7 +147,7 @@ function Category() {
     }
 
     try {
-      const response = await axios.get('https://hahai-admin-79ly.onrender.com/admin', {
+      const response = await axios.get('https://localhost:5001/admin', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -181,7 +181,7 @@ function Category() {
 
     try {
       console.log('Fetching categories with token:', token);
-      const response = await axios.get('https://hahai-admin-79ly.onrender.com/categories', {
+      const response = await axios.get('https://localhost:5001/categories', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -282,7 +282,7 @@ function Category() {
     if (!confirmDelete) return;
 
     try {
-      const response = await axios.delete(`https://hahai-admin-79ly.onrender.com/categories/${id}`, {
+      const response = await axios.delete(`https://localhost:5001/categories/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

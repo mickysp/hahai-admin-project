@@ -122,7 +122,7 @@ function AddCategory() {
         }
 
         try {
-            const response = await axios.get('https://hahai-admin-79ly.onrender.com/admin', {
+            const response = await axios.get('https://localhost:5001/admin', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -160,7 +160,7 @@ function AddCategory() {
                 return;
             }
 
-            const response = await axios.post("https://hahai-admin-79ly.onrender.com/categories", newCategory, {
+            const response = await axios.post("https://localhost:5001/categories", newCategory, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

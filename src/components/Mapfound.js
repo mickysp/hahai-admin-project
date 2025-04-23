@@ -27,7 +27,7 @@ const Mapfound = ({ timePeriod }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://hahai-admin-79ly.onrender.com/blogs/top-object-location?timePeriod=${timePeriod}`);
+        const response = await axios.get(`https://localhost:5001/blogs/top-object-location?timePeriod=${timePeriod}`);
         if (response.data && response.data.topLocations) {
           setBlogs(response.data.topLocations.slice(0, 5)); // หรือใช้ locations ทั้งหมดตามเงื่อนไขที่กำหนด
         }

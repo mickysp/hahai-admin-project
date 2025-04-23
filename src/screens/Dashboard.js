@@ -248,7 +248,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchTotalBlogs = async () => {
       try {
-        const response = await axios.get('https://hahai-admin-79ly.onrender.com/blogs', {
+        const response = await axios.get('https://localhost:5001/blogs', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           },
